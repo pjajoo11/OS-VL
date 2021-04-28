@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compare All</title>
+        <link rel="stylesheet" href="../css/compareall.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    </head>
+    <body>
+        <!-- Nav menu starts -->
+        <nav class="menu">
+        <header>Algorithms<span>×</span></header>
+        <ol>
+            <li class="menu-item"><a href="../../index.html">Home</a></li>
+            <li class="menu-item"><a href="fcfs.html">FCFS</a></li>
+            <li class="menu-item"><a href="sjf.html">SJF</a></li>
+            <li class="menu-item"><a href="rr.html">RR</a></li>
+            <li class="menu-item"><a href="pr.html">Priority</a></li>
+            <li class="menu-item"><a href="ljf.html">LJF</a></li>
+            <li class="menu-item"><a href="lrtf.html">LRTF</a></li>
+            <li class="menu-item"><a href="srtf.html">SRTF</a></li>
+            <li class="menu-item"><a href="compareall.html">Compare All</a></li>
+        </ol>
+        <footer><button aria-label="Toggle Menu">Toggle</button></footer> <!-- for closing the stuff -->
+        </nav> 
+
+        <!-- Nav menu ends -->
+        <header class="content">
+        <br>
+        <h1 class="ml12">COMPARE ALL</h1>
+        <br>
+        
+        <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">FCFS</label>
+        <label class="switch">
+            <input type="checkbox" id="fcfs" checked>
+            <span class="slider round"></span>
+        </label>
+        <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">&nbsp;&nbsp;&nbsp;SJF</label>
+        <label class="switch">
+            <input type="checkbox" id="sjf" checked>
+            <span class="slider round"></span>
+        </label>
+        <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">&nbsp;&nbsp;&nbsp;LJF</label>
+        <label class="switch">
+            <input type="checkbox" id="ljf" checked>
+            <span class="slider round"></span>
+        </label>
+        <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">&nbsp;&nbsp;&nbsp;SRTF</label>
+        <label class="switch">
+            <input type="checkbox" id="srtf" checked>
+            <span class="slider round"></span>
+        </label>
+        <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">&nbsp;&nbsp;&nbsp;LRTF</label>
+        <label class="switch">
+            <input type="checkbox" id="lrtf" checked>
+            <span class="slider round"></span>
+        </label>
+        <!-- <label  style="font-size: 20px; width: 60px; height: 34px; color: lightgray;">&nbsp;&nbsp;&nbsp;RR</label>
+        <label class="switch">
+            <input type="checkbox" id="algo" checked>
+            <span class="slider round"></span>
+        </label>
+        <br><br>
+        <input type="number" id="timeQ" placeholder="Enter Time Quantum  "> -->
+        <br><br>
+
+        <div id="container">
+            <div class="item">Process No.</div>
+            <div class="item">Arrival time</div>
+            <div class="item">Burst time</div>
+
+            <!-- <div class="item ans" style="border: 2px solid lightgray;">Completion Time</div>
+            <div class="item ans" style="border: 2px solid lightgray;">Turn Around Time</div>
+            <div class="item ans" style="border: 2px solid lightgray;">Waiting Time</div> -->
+        </div>
+        
+        <div id="data">
+            <label class="cen">0</label>
+            <input type="number" class="cen">
+            <input type="number" class="cen">
+            <!-- <label class="ans"></label>
+            <label class="ans"></label>
+            <label class="ans"></label> -->
+        </div>
+        
+        <br>
+        <button id="add_row" class="btn">Add Row</button>
+        <button id="delete_row" class="btn">Delete Row</button>
+        <br>
+        <button id="compute" class="btn">Compare</button>
+        <button id="reset" class="btn">Reset</button>
+        <br><br>
+        <br>
+
+        <div>
+            <canvas id="myChart" style="width: 50%; height: 200px; padding: 10px;"></canvas>
+        </div>
+
+    </header>
+        <!-- <button id="animate" class="btn">Animate</button> -->
+
+        <!-- <div id="animateAll">
+            <label class="start"></label>
+            <div class="animation">
+                <label class="process_animate">p0</label>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="avg">
+            <span class="b">Average Turn Around Time </span>
+            <label class="a" id="avg_tat"></label>
+            <br><br>
+            <span class="b">Average Waiting Time </span>
+            <label class="a" id="avg_wat"></label>
+        </div> -->
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/compareall.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+
+    </body>
+
+</html>

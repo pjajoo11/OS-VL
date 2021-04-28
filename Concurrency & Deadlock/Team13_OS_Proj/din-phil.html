@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<html>
+        <link rel="stylesheet" href="./style.css">
+        <div class="container-fluild p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="../../home.html">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="semabi.html">Binary Semaphore</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="semaphore.html">Counting Semaphore</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="Mutex.html">Mutex Lock</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="bankerss.html">Bankers Algorithm</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="procon.html">Producer-Consumer</a>
+                                            </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="din-phil.html">Dining Philosophers</a>
+                                        </li>
+                                </ul>
+                        </div>
+                </nav>
+        </div>
+        </header>
+
+        <head>
+                <title>Dining Philosophers</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <link rel="stylesheet" type="text/css"
+                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        </head>
+        
+        <body>
+                <br>
+                <div class="container">
+                        <div class="jumbotron">
+                                <h1 class="display-3">DINING PHILOSOPHERS</h1>
+                                <p class="lead">The "Dining Philosophers" problem by Djikstra</p>
+                                <hr class="my-4">
+                                <p>
+                                        Five silent philosophers sit at a table around a bowl of spaghetti.
+                                        A fork is placed between each pair of adjacent philosophers.
+                                        Each philosopher must alternately think and eat.
+                                        However, a philosopher can only eat spaghetti when he has both left and right forks.
+                                        Each fork can be held by only one philosopher and so a philosopher can use the fork
+                                        only if it's not being used by another philosopher.
+                                        After he finishes eating, he needs to put down both the forks so they become available
+                                        to others.
+                                        A philosopher can grab the fork on his right or the one on his left as they become
+                                        available,
+                                        but can't start eating before getting both of them.
+                                        Eating is not limited by the amount of spaghetti left: assume an infinite supply.
+                                        The problem is how to design a discipline of behavior (a concurrent algorithm) such that
+                                        each philosopher won't starve, i.e. can forever continue to alternate between eating and
+                                        thinking,
+                                        assuming that any philosopher can not know when others may want to eat or think.</p>
+                        </div>
+                </div>
+        </body>
+
+        <div class="blinkdiv">
+        </div>
+       
+        <div class="box-container">
+               
+                <img1 src="" alt="">
+                <div class="small-circle small-circle5"></div>=EATING
+                
+                <div class="small-circle small-circle6"></div>=THINKING
+                
+                <div class="small-circle small-circle7"></div>=FINISHED EATING
+                <div class="img-container img-container0">
+                        <h4>Wirth</h4>
+                        <img class="img img0" src="images/p0.jpg" alt="">
+                        
+                        <div class="small-circle small-circle0"></div>
+                </div>
+                <div class="img-container img-container1">
+                        <h4>Brinch</h4>
+                        <img class="img img1" src="images/p1.jpg" alt="">
+                        <div class="small-circle small-circle1"></div>
+                </div>
+                <div class="img-container img-container2">
+                        <h4>Hoare</h4>
+                        <img class="img img2" src="images/p2.jpg" alt="">
+                        <div class="small-circle small-circle2"></div>
+                </div>
+                <div class="img-container img-container3">
+                        <div class="small-circle small-circle4"></div>
+                        <img class="img img3" src="images/p3.jpg" alt="">
+                        <h4>Dijkstra</h4>
+                </div>
+                <div class="img-container img-container4">
+                        <div class="small-circle small-circle3"></div>
+                        <img class="img img4" src="images/p4.jpg" alt="">
+                        <h4>Dahl</h4>
+                </div>
+
+                <div class="big-circle">
+                </div>
+                <button class="btn btn-primary btn-success" onclick="{flashRed()}">Run</button>
+                <!-- <button onclick={flashRed()}>START</button> -->
+                <button type="reset"  class="btn btn-primary btn-danger" value="Reset" onclick="myJsFunctionReset()">Reset</button>
+        </div>
+
+        <script>
+                let semaphore = [1,1,1,1,1]
+                let redCount = 0
+                let redCount2 = 0
+                let red = []
+                let red2 = []
+                let done = []
+
+                const flashRed = () => {
+                        if (redCount > 4) return 
+
+                        redCount2 = (redCount + 2) % 5
+                        if(done.indexOf(redCount) === -1){
+                                red = document.getElementsByClassName(`small-circle${redCount}`)
+                                red[0].classList.add('redHighlight')
+                        }
+                        if(done.indexOf(redCount2) === -1){
+                                red2 = document.getElementsByClassName(`small-circle${redCount2}`)
+                                red2[0].classList.add('redHighlight')
+                        }
+                        
+                        for(let i = 0; i < semaphore.length; i++){
+                                if (i === redCount || i === redCount2 || done.indexOf(i) !== -1) continue
+                                let yellow = document.getElementsByClassName(`small-circle${i}`)
+                                yellow[0].classList.add('yellowHighlight')
+
+                                setTimeout(function() {
+                                        yellow[0].classList.remove('yellowHighlight')
+                                }, 3000);
+                        }
+
+                        setTimeout(function() {
+                                red[0].classList.remove('redHighlight')
+                                red2[0].classList.remove('redHighlight')
+                                red[0].classList.add('greenHighlight')
+                                red2[0].classList.add('greenHighlight')
+                                done.push(redCount)
+                                done.push(redCount2)
+                                redCount++
+                                flashRed()
+                        }, 3000);
+                }
+
+                function myJsFunctionReset()
+                {
+                window.location.reload();
+                document.getElementById("demo1").innerHTML="";
+                }
+    
+        </script>
+</html>

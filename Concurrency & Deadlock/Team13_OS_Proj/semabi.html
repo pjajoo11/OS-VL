@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BinarySemaphore</title>
+    <style>
+        body
+        {
+            margin: 0 0;
+            padding: 0 0 0 0;
+        }
+        .navbar
+        {
+            background-color:midnightblue;
+            padding: 1px;
+        }
+        .navbar ul li 
+        {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .navbar ul li a 
+        {
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            text-decoration: none;
+            font-size: large;
+            font-style: bold;
+        }
+        .navbar ul li a:hover
+        {
+            color: blue;
+        }
+        .items input 
+        {
+            margin-top: 20px;
+            margin-left: 360px;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .items button 
+        {
+            padding: 8px;
+            width: 80px;
+        }
+
+        .div1
+        {
+            background-color: rgb(220,220,220);
+            position: relative;
+            width: 540px;
+            border-radius: 10px;
+            border: 5px solid black;
+            padding: 30px;
+            margin-left: 10px;
+            margin-top: 40px;
+            font-size: 25px;
+        }
+
+        .div2
+        {
+            background-color:rgb(220,220,220);
+            width: 540px;
+            position: relative;
+            border-radius: 10px; 
+            border: 5px solid black;
+            padding: 30px;
+            margin-left: 10px;
+            margin-top: 40px;
+            font-size: 25px;
+        }
+
+        .div3
+        {
+            background-color: rgb(220,220,220);
+            position: relative;
+            width: 540px;
+            border-radius: 10px; 
+            border: 5px solid black;
+            padding: 30px;
+            margin-left: 10px;
+            margin-top: 40px;
+            font-size: 25px;
+        }
+
+        .div4
+        {
+            background-color: rgb(220,220,220);
+            position: relative;
+            width: 500px;
+            border-radius: 10px;
+            border: 5px solid black;
+            padding: 30px;
+            margin-left: 620px;
+            bottom: 320px;
+            font-size: 25px;
+        }
+
+        .div5
+        {
+            background-color: rgb(220,220,220);
+            position: relative;
+            width: 500px;
+            border-radius: 10px;
+            border: 5px solid black;
+            padding: 30px;
+            margin-left: 620px;
+            margin-top: 20px;
+            bottom: 320px;
+            font-size: 25px;
+        } 
+
+        .processbtn
+        {
+            left: 200px;
+            bottom: 200px;
+            background-color: rgb(30,144,255);
+            color: whitesmoke;
+            position: relative;
+            width: 150px;
+        }
+        
+        
+</style>
+ <header>
+    <div class="container-fluild p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="semabi.html">Binary Semaphore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="semaphore.html">Counting Semaphore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Mutex.html">Mutex Lock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bankerss.html">Bankers Algorithm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="procon.html">Producer-Consumer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="din-phil.html">Dining Philosophers</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<head>
+    <!-- <title>Banker's Algorithm</title> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">BINARY SEMAPHORE</h1>
+            
+            <hr class="my-4">
+            <p>A binary semaphore is restricted to values of zero or one, while a counting semaphore can assume any nonnegative integer value. A binary semaphore can be used to control access to a single resource. In particular, it can be used to enforce mutual exclusion for a critical section in user code. In this instance, the semaphore would be created with an initial count of one to indicate that no task is executing the critical section of code. On entry to the critical section, a task must issue the method for obtaining a semaphore to prevent other tasks from entering the critical section. On exit from the critical section, the task must issue the method for releasing the semaphore to allow another task to execute the critical section.</p>
+        </div>
+        <div class="items">
+            <div class="jumbotron">
+                <form name="Need">
+                    <div class="form-group" style="margin-left:10px; float: left;">
+                        <label>Enter the number of Processes:</label> <input id = 'input1' class="form-control" type="Number" onkeyup="BuildFormFields2(y = parseInt(this.value, 10));" />
+                        <div id="FormFields1"></div>
+                    </div>
+                </form>
+                <form name="Alloc">
+                    <div class="form-group" style="margin-left:50px;float:left;margin-top:60px;">
+                    <div id="FormFields2"></div>
+                </div>
+                </form>
+
+            <table id="tab_need" class="table table-striped  table-hover">
+
+            </table>
+
+            <table id="tab_alloc" class="table table-striped table-hover">
+
+
+            </table>
+
+            <ul id="printing">
+
+            </ul>
+            <p id="demo" style="font-weight: bold; font-size: 50px;">
+
+            </p>
+            <button class="btn btn-primary btn-success" id='btn'>Submit</button> 
+            <button type="reset"  class="btn btn-primary btn-danger" value="Reset" onclick="myJsFunctionReset()">Reset</button>
+        </div>
+    </div>
+    <div class="div1 block" id="entry">Start State :</div>
+    <div class="div2 block" id="crcsec">Critical Section :</div>
+    <div class="div3 block" id="end">End State :</div>
+    <div class="div4" id="semv">Semaphore Value = 1</div>
+    <div class="div5" id="blck">Blocked State :</div> 
+    <!-- <div class="process">
+        <button id="p1">Proccess1</button>
+    </div> -->
+    <p id="demo1"></p>
+
+
+    <script>
+
+        createProcess();
+    
+        let processQueue = [];   
+
+        let ProcessRunning = false;     
+
+        //* Helper Functions *//
+
+        // For making code wait for timer to resolve and return promise.
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+
+        // Add button on Clicking Submit.
+        function createProcess() {
+            let btn = document.getElementById("btn");
+            btn.addEventListener("click", (event) => {
+                console.log("clicked");
+                let inputtxt = document.getElementById("input1");
+                let val = +inputtxt.value;
+
+                for(let i = 1; i <= val; ++i) {
+                    let bt = document.createElement("button");
+                    bt.textContent = "Process" + i;
+                    bt.className = "processbtn";
+                    bt.id = i;
+                    document.body.append(bt);
+                }
+                console.log("yes");
+                sessionStart();
+            });  
+        }
+
+        // Attaching handlers to process buttons.
+        function sessionStart() {
+            // Catch all processes buttons and store it in array.
+            let process_btns = document.body.querySelectorAll('.processbtn');
+
+            // Attach Listener handler.
+            for(let process_btn of process_btns) {
+                process_btn.addEventListener('click', () => handleProcessClick(event) );
+            }
+        }
+
+        function wrappertoProcessClick(event) {
+            return new Promise(resolve => handleProcessClick(event));
+        }
+
+
+        // Handler for click on process buttons.
+        
+        async function handleProcessClick(event) {
+
+            //Get sempahore and blockedstate div
+
+            let semaphore = document.getElementById('semv');
+            let blockedstate = document.getElementById('blck');
+
+            let process_btn = event.target;
+
+            // Get which process was clicked.
+            let which_process = process_btn.textContent;
+
+            // Remove button once clicked.
+            //console.log(event.target);
+            process_btn.remove();
+
+            // ProcessRunning, than exit, Update BlockList, add to queue
+
+            if(ProcessRunning) {
+                processQueue.push(event);
+                let list = blockedstate.textContent;
+                if(list != "Blocked State: ") {
+                    list += ",";
+                }
+                list += event.target.textContent;
+                blockedstate.textContent = list;
+                console.log("ExIt from main: " + processQueue);
+                return;
+            }
+
+            // Hence, now safe to process it.
+
+            // Update Processrunning and semphore animation.
+            ProcessRunning = true;
+            semaphore.textContent = "Semaphore Value = 1";
+            wait = await sleep(2000);
+            semaphore.textContent = "Semaphore Value = 0";
+            if(semaphore.textContent = 'Semaphore Value = 0')
+            {
+                semaphore.style.backgroundColor = 'rgb(255,99,71)';
+            }
+            // console.log("running ", processQueue);
+            
+            
+            // Handling Start State Block.
+            wait = await sleep(1000);
+            
+            let startTxt = document.querySelector('#entry');
+            startTxt.textContent = 'Start State: ' + which_process;
+            //console.log(which_process, startTxt);
+
+            
+            wait = await sleep(1000);
+            startTxt.textContent = 'Start State';
+
+            // Handling Critical Section Block.
+            let cricTxt = document.querySelector('#crcsec')
+            cricTxt.textContent = 'Critical Section: ' + which_process;
+
+            wait = await sleep(1000);
+
+            cricTxt.textContent = 'Critical Section';
+
+            // Handling End State Block.
+            let endTxt = document.querySelector('#end');
+            endTxt.textContent = 'End State: ' + which_process;
+
+            wait = await sleep(1000);
+
+            endTxt.textContent = "End State";  
+
+            ProcessRunning = false;
+            wait = await sleep(1000);
+            semaphore.textContent = "Semaphore Value = 1";
+            if(semaphore.textContent = 'Semaphore Value = 1')
+            {
+                semaphore.style.backgroundColor = 'rgb(220,220,220)';
+            }
+            
+
+            // All processes in queue, if any, handle them all
+            while(processQueue.length) {
+                let currEvent = processQueue[0];
+                
+                processQueue.splice(0, 1);
+                let list = "Blocked State: ";
+                for(let prcs of processQueue) {
+                    if(prcs != processQueue[0]) {
+                        list += ",";
+                    }
+                    list += prcs.target.textContent;
+                }
+                blockedstate.textContent = list;
+                // console.log("Inside: " + currProcess, processQueue.length);
+                wait = await wrappertoProcessClick(currEvent);
+                //console.log(processQueue.length, "hereeeee");
+                //console.log(processQueue.length);
+                
+            }
+           
+
+        }
+
+        function myJsFunctionReset()
+        {
+        window.location.reload();
+        document.getElementById("demo1").innerHTML="";
+        }
+    
+
+        
+
+        
+
+    </script> 
+</body>
+</html>

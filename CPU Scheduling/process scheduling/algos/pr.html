@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIORITY</title>
+
+    <link rel="stylesheet" href="../css/demo.css"></link>
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+<body>
+   
+    <!-- Nav menu starts -->
+    <nav class="menu">
+    <header>Algorithms<span>×</span></header>
+    <ol>
+        <li class="menu-item"><a href="../../index.html">Home</a></li>
+        <li class="menu-item"><a href="fcfs.html">FCFS</a></li>
+        <li class="menu-item"><a href="sjf.html">SJF</a></li>
+        <li class="menu-item"><a href="rr.html">RR</a></li>
+        <li class="menu-item"><a href="pr.html">Priority</a></li>
+        <li class="menu-item"><a href="ljf.html">LJF</a></li>
+        <li class="menu-item"><a href="lrtf.html">LRTF</a></li>
+        <li class="menu-item"><a href="srtf.html">SRTF</a></li>
+        <li class="menu-item"><a href="compareall.html">Compare All</a></li>
+    </ol>
+    <footer><button aria-label="Toggle Menu">Toggle</button></footer> <!-- for closing the stuff -->
+    </nav> 
+
+    <!-- Nav menu ends -->
+
+    <header class="content">
+        <br>
+        <h1 class="ml12" style="margin-left: 120px;">Priority</h1>
+        <br>
+    <label style="font-size: 20px; width: 60px; height: 34px; margin-left:5px; color: mintcream;">Pre-emptive</label>
+    <label class="switch" style="margin-left: 5px;">
+        <input type="checkbox" id="check">
+        <span class="slider round"></span>
+    </label>
+    <label style="font-size: 20px; width: 60px; height: 34px; margin-left: 5px; color: mintcream;">Non Pre-emptive</label>
+    <br><br><br>
+
+    <div id="containerpr">
+        <div class="item">Process No.</div>
+        <div class="item">Arrival time</div>
+        <div class="item">Priority</div>
+        <div class="item">Burst time</div>
+
+        <div class="item ans" style="border: 2px solid black;">Completion Time</div>
+        <div class="item ans" style="border: 2px solid black;">Turn Around Time</div>
+        <div class="item ans" style="border: 2px solid black;">Waiting Time</div>
+
+    </div>
+
+    <div id="container_IOpr">
+        <div class="item">Process No.</div>
+        <div class="item">Total IO</div>
+        <div class="item">Arrival time</div>
+        <div class="item">Priority</div>
+        <div class="item">Burst time</div>
+
+        <div class="item ans" style="border: 2px solid black;">Completion Time</div>
+        <div class="item ans" style="border: 2px solid black;">Turn Around Time</div>
+        <div class="item ans" style="border: 2px solid black;">Waiting Time</div>
+    </div>
+
+    <div id="datapr">
+        <label class="cen">0</label>
+        <input type="number" class="cen">
+        <input type="number" class="cen">
+        <input type="number" class="cen">
+        <label class="ans"></label>
+        <label class="ans"></label>
+        <label class="ans"></label>
+    </div>
+
+    <div id="data_IOpr">
+        <label class="cen">0</label>
+        <input type="number" class="cen">
+        <input type="number" class="cen">
+        <input type="number" class="cen">
+        <div class="cen" style="overflow: auto;">
+            <input type="number" class="cen_IO" placeholder="BT" style="width:60px;">
+        </div>
+        <label class="ans"></label>
+        <label class="ans"></label>
+        <label class="ans"></label>
+    </div>
+    <br>
+    <button id="add_row" class="btn">Add Row</button>
+    <button id="delete_row" class="btn">Delete Row</button>
+    <br>
+    <button id="compute" class="btn">Compute</button>
+    <button id="reset" class="btn">Reset</button>
+    <br><br>
+<br>
+</header>
+    <!-- <button id="animate" class="btn">Animate</button> -->
+
+    <div id="animateAll">
+        <label class="start"></label>
+        <div class="animation">
+            <label class="process_animate">p0</label>
+        </div>
+    </div>
+<br>
+<br>
+    <div class="avg">
+        <span class="b">Average Turn Around Time </span>
+        <label class="a" id="avg_tat"></label>
+        <br>
+        <br>
+        <span class="b">Average Waiting Time </span>
+        <label class="a" id="avg_wat"></label>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/pr.js"></script>
+
+</body>
+
+</html>

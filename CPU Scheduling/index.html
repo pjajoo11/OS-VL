@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OS Scheduling Project</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- clients -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+ <!-- CUSTOM CSS --> 
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+ <link href="netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom-Stylesheet-Links
+<link rel="stylesheet"  href="css/bootstrap.min.css"  type="text/css" media="all">
+<link rel="stylesheet"  href="css/style.css"    type="text/css" media="all">  
+//Custom-Stylesheet-Links --> 
+<!-- Fonts -->  <!-- 
+ <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'  type='text/css'>
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Sigmar+One'      type='text/css'>
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,500,600'   type='text/css'> -->
+<!-- //Fonts -->
+<!-- JavaScript -->
+<!--<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script src="js/responsiveslides.min.js"></script>-->
+  <!-- <script>
+    $(function () {
+      $("#slider1").responsiveSlides({
+        auto: true,
+        nav: true,
+        speed: 1000,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script> -->
+<!-- //JavaScript --><!-- animation-effect -->
+<!--<link href="css/animate.min.css" rel="stylesheet"> 
+<script src="js/wow.min.js"></script>-->
+<script>
+ new WOW().init();
+</script>
+<!-- //animation-effect -->
+
+
+</head>
+<body>
+
+
+	<!-- Preloader -->
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<script>$(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(450).css({'overflow':'visible'});
+})</script>
+	<!-- Preloader -->
+
+
+
+</div>
+<div class="overlay-navigation">
+  <nav role="navigation">
+    <ul>
+      <li><a href="#" data-content="Yuwanta">CPU Scheduling</a></li>
+      <li><a href="#" data-content="Yuwanta">Algorithms</a></li>
+      <li><a href="#" data-content="Yuwanta">Team</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section class="home">
+  <a href="../home.html" target="_blank" style="font-size: large; font-family: sans-serif; font-weight: bold;">OS VIRTUAL LAB</a>
+  <div class="open-overlay">
+    <span class="bar-top"></span>
+    <span class="bar-middle"></span>
+    <span class="bar-bottom"></span>
+  </div>
+</section>
+
+
+<script></script>
+   
+      <!-- //Navbar -->
+    <!-- Slider -->
+    
+    <!-- //Slider -->
+
+    
+ <div class="container-fluid main">
+
+  
+
+  <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active background a"></div>
+      <div class="item background b"></div>
+      <div class="item background c"></div>
+    </div>
+  </div>
+  
+ <!--  <div class="covertext">
+    <div class="col-lg-10" style="float:none; margin:0 auto;">
+      <h1 class="title">ELINE</h1>
+      <h3 class="subtitle">A Tidy, Clean, Easy-to-Use, and Responsive Landing Page Template</h3>
+    </div>
+    <div class="col-xs-12 explore">
+      <a href="#"><button type="button" class="btn btn-lg explorebtn">EXPLORE</button></a>
+    </div>
+  </div>
+ -->
+
+ <div class="slider-text" >
+            <div class="Iam">
+
+<p>Developers</p>
+<b>
+  <div class="innerIam">
+    Prakhar Jajoo<br /> 
+    Shubh Porwal<br />
+    Tanay Butala<br />
+    Priyank Mistry<br />
+    Preet Patel
+    </div>  
+</b>
+
+</div>
+            <!-- <button type="button" class="slider-read-more">+ Read more</button> -->
+          </div>  
+  
+</div>
+
+<script>/* When your mouse cursor enter the background, the fading won't pause and keep playing */ 
+$('.carousel').carousel({
+    pause: "false" /* Change to true to make it paused when your mouse cursor enter the background */
+});</script>
+
+<!-- fading js -->
+<script>
+  AOS.init();
+</script>
+<!-- fading js end -->
+<!-- arrow -->
+<div>
+
+<a class="scroll-down" href="#content">
+<span class="arrow"></span>
+<!--<span class="hint">scroll</span>-->
+</a>
+</div>
+
+<script>let gotoOne = () => $.scrollTo($("#one"), 800);
+let gotoTop = () => $.scrollTo($("#top"), 800);
+
+$("#topArrow").click(gotoOne);
+$("#bottomArrow").click(gotoTop);</script>
+  <!-- //Header -->
+
+
+  <!-- Services -->
+  <section id="content">
+  <div class="services w3l wow ">
+    <div class="container" data-aos="fade-right">
+
+
+      <div class="hidden-xs"><h1>CPU Scheduling</h1></div>
+      <div class="visible xs hidden-lg hidden-md hidden-sm"><h1 style="font-size: 20px;">OS Scheduling Algorithms</h1></div>
+
+      <div class="grid_3 grid_5">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#fcfs" id="fcfs-tab" role="tab" data-toggle="tab" aria-controls="fcfs" aria-expanded="true">First Come First Serve (FCFS)</a></li>
+            <li role="presentation"><a href="#sjf" role="tab" id="sjf-tab" data-toggle="tab" aria-controls="sjf">Shortest Job First (SJF)</a></li>
+            <li role="presentation"><a href="#rr" role="tab" id="rr-tab" data-toggle="tab" aria-controls="rr">Round Robbin (RR)</a></li>
+            <li role="presentation"><a href="#priority" role="tab" id="priority-tab" data-toggle="tab" aria-controls="priority">Priority</a></li>
+            <li role="presentation"><a href="#ljf" role="tab" id="ljf-tab" data-toggle="tab" aria-controls="ljf">Longest Job First (LJF)</a></li>
+            <li role="presentation"><a href="#lrtf" role="tab" id="lrtf-tab" data-toggle="tab" aria-controls="lrtf">Longest Remaining Time First (LRTF)</a></li>
+            <li role="presentation"><a href="#srtf" role="tab" id="srtf-tab" data-toggle="tab" aria-controls="srtf">Shortest Remaining Time First (SRTF)</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="fcfs" aria-labelledby="fcfs-tab">
+              
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>First come first serve (FCFS) scheduling algorithm simply schedules the jobs according to their arrival time. The job which comes first in the ready queue will get the CPU first. The lesser the arrival time of the job, the sooner will the job get the CPU. FCFS scheduling may cause the problem of starvation if the burst time of the first process is the longest among all the jobs.</p>
+                <p>Advantages of FCFS</p>
+                  <p><ul>
+                    <li>The simplest form of a CPU scheduling algorithm</li>
+                    <li>Easy to program</li>
+                    <li>First come first served</li>
+                  </ul>
+                  </p>
+                  <p>Disadvantages of FCFS<p></p>
+                    <p><ul>
+                      <li>It is a Non-Preemptive CPU scheduling algorithm, so after the process has been allocated to the CPU, it will never release the CPU until it finishes executing.</li>
+                      <li>The Average Waiting Time is high</li>
+                      <li>Short processes that are at the back of the queue have to wait for the long process at the front to finish.</li>
+                    </ul>
+                    </p>
+              </div>
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/laptop-6087062_1280.png" class="img-responsive" alt="Wanderer" style="height: 320px;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="sjf" aria-labelledby="sjf-tab">
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/machine-learning-6079971_1280.png" class="img-responsive" alt="Wanderer" style="height: 320px;">
+              </div>
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.</p>
+                <p>Advantages of SJF</p>
+                <p><ul>
+                  <li>SJF method gives the lowest average waiting time for a specific set of processes.</li>
+                  <li>It is appropriate for the jobs running in batch, where run times are known in advance.</li>
+                  <li>SJF is frequently used for long term scheduling.</li>
+                </ul>
+                </p>
+                <p>Disadvantages of SJF<p></p>
+                  <p><ul>
+                    <li>It is a Non-Preemptive CPU scheduling algorithm, so after the process has been allocated to the CPU, it will never release the CPU until it finishes executing.</li>
+                    <li>The Average Waiting Time is high</li>
+                    <li>Short processes that are at the back of the queue have to wait for the long process at the front to finish.</li>
+                  </ul>
+                  </p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="rr" aria-labelledby="rr-tab">
+              
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>Round Robin (RR) scheduling algorithm is mainly designed for time-sharing systems. This algorithm is similar to FCFS scheduling, but in Round Robin (RR) scheduling, preemption is added which enables the system to switch between processes.</p>
+                <p>Advantages of RR</p>
+                <p><ul>
+                  <li>It doesn't face the issues of starvation or convoy effect.</li>
+                  <li>It deals with all process without any priority</li>
+                  <li>Allows OS to use the Context switching method to save states of preempted processes.</li>
+                </ul>
+                </p>
+                <p>Disadvantages of RR<p></p>
+                  <p><ul>
+                    <li>It's performance heavily depends on time quantum.</li>
+                    <li>Round-robin scheduling doesn't give special priority to more important tasks.</li>
+                    <li>Lower time quantum results in higher the context switching overhead in the system.</li>
+                  </ul>
+                  </p>
+              </div>
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/971.jpg" class="img-responsive" alt="Wanderer" style="height: 320px; margin-top: -10px;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="priority" aria-labelledby="priority-tab">
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority.
+                  The processes with higher priority should be carried out first, whereas jobs with equal priorities are carried out on a round-robin or FCFS basis. Priority depends upon memory requirements, time requirements, etc.</p>
+                  <p>Advantages of Priority</p>
+                  <p><ul>
+                    <li>Processes are executed on the basis of priority so high priority does not need to wait for long which saves time</li>
+                    <li>Suitable for applications with fluctuating time and resource requirements.</li>
+                    <li>Easy to use scheduling method.</li>
+                  </ul>
+                  </p>
+                  <p>Disadvantages of Priority<p></p>
+                    <p><ul>
+                      <li>A process will be blocked when it is ready to run but has to wait for the CPU because some other process is running currently.</li>
+                      <li>This method provides a good mechanism where the relative important of each process may be precisely defined.</li>
+                      <li>Processes are executed on the basis of priority so high priority does not need to wait for long which saves time</li>
+                    </ul>
+                    </p>
+              </div>
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/36405012.jpg" class="img-responsive" alt="" >
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="ljf" aria-labelledby="ljf-tab">
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/25708582.jpg" class="img-responsive" alt="Wanderer" >
+              </div>
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>Longest Job First (LJF) is a non-preemptive scheduling algorithm. This algorithm is based upon the burst time of the processes. The processes are put into the ready queue based on their burst times i.e., in a descending order of the burst times. As the name suggests this algorithm is based upon the fact that the process with the largest burst time is processed first. The burst time of only those processes is considered that have arrived in the system until that time.</p>
+                <p>Advantages of LJF</p>
+                  <p><ul>
+                    <li>No process can be completed until the longest job reaches its completion.</li>
+                    <li>All the processes approximately finishe at the same time.</li>
+                  </ul>
+                  </p>
+                  <p>Disadvantages of LJF<p></p>
+                    <p><ul>
+                      <li>The algorithm gives very high average waiting time and average turn-around time for a given set of processes.</li>
+                      <li>This may lead to convoy effect.</li>
+                      <li>It reduces the processing speed and thus reduces the efficiency and utilization of the system.</li>
+                    </ul>
+                    </p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="lrtf" aria-labelledby="lrtf-tab">
+
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>This is a pre-emptive version of Longest Job First (LJF) scheduling algorithm. In this scheduling algorithm, we find the process with the maximum remaining time and then process it. We check for the maximum remaining time after some interval of time (say 1 unit each) to check if another process having more burst time arrived up to that time.</p>
+                <p>Advantages of LRTF</p>
+                  <p><ul>
+                    <li>LRTF algorithm is simple and easy to implement.</li>
+                    <li>Almost all the processes complete by the time the longest job reaches its completion.</li>
+                    <li>Starvation-free as all processes get fair share of CPU.</li>
+                  </ul>
+                  </p>
+                  <p>Disadvantages of LRTF<p></p>
+                    <p><ul>
+                      <li>The context switch consumes CPU’s valuable time which can be utilized for executing processes.</li>
+                      <li>Smaller processes need to wait for CPU to finish larger burst size processes.</li>
+                      <li>The average waiting time and average turn-around time are much high even with much less burst time of each process.</li>
+                    </ul>
+                    </p>
+              </div>
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/36405012.jpg" class="img-responsive" alt="" style="height: 320px;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="srtf" aria-labelledby="srtf-tab">
+
+              <div class="col-md-7 col-sm-7 tab-info">
+                <p>Shortest Remaining Time First (SRTF) is a scheduling algorithm used in Operating Systems, which can also be called as the preemptive version of the SJF scheduling algorithm. The process which has the least processing time remaining is executed first. As it is a preemptive type of schedule, it is claimed to be better than SJF scheduling Algorithm.</p>
+                <p>Advantages of SRTF</p>
+                  <p><ul>
+                    <li>SRTF algorithm makes the processing of the jobs faster than SJN algorithm, given it’s overhead charges are not counted.</li>
+                    <li>Allows for preemption, which reduces wait time over non-premptive version</li>
+                    <li>Short jobs are completed quickly</li>
+                  </ul>
+                  </p>
+                  <p>Disadvantages of SRTF<p></p>
+                    <p><ul>
+                      <li>The context switch is done a lot more times in SRTF than in SJN, and consumes CPU’s valuable time for processing.</li>
+                      <li>This adds up to it’s processing time and diminishes it’s advantage of fast processing.</li>
+                    </ul>
+                    </p>
+              </div>
+              <div class="col-md-5 col-sm-5 tab-image">
+                <img src="img/18592010.jpg" class="img-responsive" alt="" style="height: 350px;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </section>
+  <!-- //Services -->
+<br>
+
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- servises22 -->
+<div class="container" data-aos="zoom-in">
+    <h2 class="services h1" align="center" style="color:#00df9a; font-family: 'Orbitron', sans-serif;"><b>Algorithms</b></h2>
+
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 ">
+            <div class="service-box">
+                <div class="service-icon yellow">
+                    <div class="front-content">
+                        <h3>FCFS</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/fcfs.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <div class="service-box">
+                <div class="service-icon orange">
+                    <div class="front-content">
+                        <h3>SJF</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/sjf.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="service-box ">
+                <div class="service-icon red">
+                    <div class="front-content">
+                        <h3>RR</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/rr.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box ">
+              <div class="service-icon red">
+                  <div class="front-content">
+                      <h3>PRIORITY</h3>
+                  </div>
+              </div>
+              <div class="service-content">
+                  <p></p>
+                  <br>
+                  <br>
+                  <div class="button_container">
+                    <a href="process scheduling/algos/pr.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="service-box">
+                <div class="service-icon grey">
+                    <div class="front-content">
+                        <h3>LJF</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/ljf.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        	<div class="col-md-3 col-sm-6 ">
+            <div class="service-box">
+                <div class="service-icon yellow">
+                    <div class="front-content">
+                        <h3>LRTF</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/lrtf.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <div class="service-box">
+                <div class="service-icon orange">
+                    <div class="front-content">
+                        <h3>SRTF</h3>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <p></p>
+                    <br>
+                    <br>
+                    <div class="button_container">
+                      <a href="process scheduling/algos/srtf.html" target="_blank"><button class="btn"><span>RUN ALGORITHM</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- servises22 -->
+
+
+  <!-- team -->
+ 
+  <br>
+  <br>
+<div class="container" data-aos="zoom-in">
+  <div class="row">
+    <h2 class="clients" align="center"><b>Team</b></h2>
+    <br>
+    <br>
+  </div>
+  <div class='row-img'>
+    <div class='col-md-10'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <a class="footer-img" href="#"><img alt="" src="img/prakhar.jpg" style="margin-left: 40px;"></a>
+              </div>          
+              <div class="col-sm-3">
+                <a class="footer-img" href="#"><img alt="" src="img/shubh1.jpg" style="margin-left: 97px;"></a>
+              </div>
+              <div class="col-sm-3">
+                <a class="footer-img" href="#"><img alt="" src="img/tanay2.jpeg" style="margin-left: 150px;"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <a class="footer-img" href="#"><img alt="" src="img/priyank.jpg" style="margin-left: 40px;"></a>
+              </div> 
+              <div class="col-sm-3">
+                <a class="footer-img" href="#"><img alt="" src="img/preet.jpg" style="margin-left: 97px;"></a>
+              </div>     
+            </div>
+          </div>
+        </div>
+        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#media" class="right carousel-control">›</a>
+      </div>                          
+    </div>
+  </div>
+</div>
+
+<script>$(document).ready(function() {
+  $('#media').carousel({
+    pause: true,
+    interval: false,
+  });
+});</script>
+    
+<!-- clients -->
+
+
+
+
+
+  <!-- about -->
+<!-- 
+ <br>
+
+  
+
+    <h2 class="clients" align="center"><b></b></h2>
+    <br><br>
+
+<section class="testimonials">
+  
+  	<br><br>
+
+<div class="container">
+	<div class="row">
+      <div class="col-md-8 col-md-offset-2">
+                <div class="quote"></div>
+        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+          <!- Carousel indicators -->
+          <!--
+            <ol class="carousel-indicators">
+            <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="5"></li>
+          </ol>
+        -->
+ <!-- Carousel items -->
+ <!--
+          <div class="carousel-inner">
+            <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(0,0,0,.2);"><img src="img/shubh.jpg" style="width: 80px;"></div>
+              <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, </p>
+              </blockquote> 
+            </div>
+            <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"><img src="img/laptop-6087062_1280.png" style="width: 80px;"></div>
+              <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, </p>
+              </blockquote>
+            </div>
+            <div class="active item">
+                        <div class="profile-circle" style="background-color: rgba(145,169,216,.2);"><img src="#" style="width: 80px;"></div>
+              <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, </p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"><img src="#" style="width: 80px;"></div>
+                <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas,</p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"><img src="#" style="width: 80px;"></div>
+                <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas,</p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"><img src="3" style="width: 80px;"></div>
+                <blockquote>
+                <p class="tes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas,</p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>              
+    </div>
+  -->
+    
+
+        <!-- <div class="clearfix"> </div> -->
+      </div>
+</section>
+
+ 
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<!--  FOOTER -->
+
+<!--<div class="footer1 container-fluid" style="background-color: #1b1b1b">
+<div class="container">
+      <div class="footer-bottom">
+        <div class="col-md-4 footer-grids wow">
+        <span><img class="img-responsive" src="logo2.png" style="width: 300px;"></span>
+
+                 <p style="color: #cdaa6a;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam.</p>
+        </div>
+        <div class="col-md-4 footer-grids footer-mdl w3agile wow ">
+        <h4 class="foothead">Follow</h4>
+          <div class="social">
+            <ul>
+              <li><a href="#" class="facebook">shubhii73</a></li>
+              <li><a href="#" class="facebook twitter"> </a></li>
+              <li><a href="#" class="facebook chrome"> </a></li>
+              <li><a href="#" class="facebook in"> </a></li>
+              
+            </ul>   
+            </div>
+        </div>
+        <div class="col-md-4 footer-grids agileinfo wow ">
+        <h4 class="foothead">Contact Info</h4>
+          <ul class="footer-address">
+            <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span>You ain't invited my G.<br> </li>
+            <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"> </span><a href="#">shubh.pce19@sot.pdpu.ac.in</a></li>
+            <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>6261313198</li>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div> -->
+      <div class="footer1 container-fluid" style="background-color: #1b1b1b;">
+      <div class="footer-copy w3 wow">
+        <p> “Code is read more than it is written.”</p>
+        <p> - Daniel Roy Greenfeld</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+<script>// ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});// ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});</script>
+<!-- Return to Top -->
+
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
